@@ -7,23 +7,23 @@ from flask import request, send_from_directory
 from flask_restful import Resource
 
 # Local imports
-from config import app, db, api
+from server.config import app, db, api
 # Add your model imports
 
 
 # Views go here!
 
-def serve():
-       return send_from_directory(app.static_folder, 'index.html')
+# def serve():
+#        return send_from_directory(app.static_folder, 'index.html')
 
-@app.route('/<path:path>')
-def static_proxy(path):
-    return send_from_directory(app.static_folder, path)
+# @app.route('/<path:path>')
+# def static_proxy(path):
+#     return send_from_directory(app.static_folder, path)
 
 
-# @app.route('/')
-# def index():
-#     return '<h1>Project Server</h1>'
+@app.route('/')
+def index():
+    return '<h1>Project Server</h1>'
 
 
 if __name__ == '__main__':
